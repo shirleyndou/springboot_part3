@@ -1,17 +1,24 @@
-package controller;
+package com.springapp;
 
 import com.springapp.User;
 import com.springapp.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("api/v1/user")
+@RequestMapping("/api/user")
 @RestController
 public class UserController {
 
     private final UserService userService;
 
-    public UserController(UserService userService){
+    @Autowired
+    public UserController(UserService userService) {
         this.userService = userService;
+    }
+
+    @GetMapping("/hello")
+    public String hello(){
+        return "hello world!";
     }
 
     @PostMapping
@@ -20,12 +27,12 @@ public class UserController {
     }
 
     @GetMapping
-    public String getUser(@PathVariable("id") long Id){
+    public String getUser(@PathVariable("Id") long Id){
         return userService.getUser(Id);
     }
 
-    @DeleteMapping(path = "{id}")
-    public void removeUser(@PathVariable("id") long Id){
+    @DeleteMapping(path = "{Id}")
+    public void removeUser(@PathVariable("Id") long Id){
         userService.removeUser(Id);
     }
 

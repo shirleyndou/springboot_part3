@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
+@Repository("fake")
 public class FakeRepo implements FakeRepoInterface {
    private static List<User> user = new ArrayList<>();
    //insert the user with the id, name and surname

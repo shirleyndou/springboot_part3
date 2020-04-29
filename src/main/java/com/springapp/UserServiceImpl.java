@@ -1,14 +1,15 @@
 package com.springapp;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
-    FakeRepoInterface fakeRepo;
+   private final FakeRepoInterface fakeRepo;
     @Autowired
-    public UserServiceImpl(FakeRepoInterface fakeRepo){
+    public UserServiceImpl(@Qualifier("fake") FakeRepoInterface fakeRepo){
         this.fakeRepo = fakeRepo;
     }
 
@@ -18,6 +19,7 @@ public class UserServiceImpl implements UserService {
         fakeRepo.insertUser(2, "John", "Doe");
         fakeRepo.insertUser(3, "Mary", "Jane");
         System.out.println(name + "entered");
+
         return name;
     }
 

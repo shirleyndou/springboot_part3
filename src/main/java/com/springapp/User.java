@@ -1,15 +1,15 @@
 package com.springapp;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class User {
 
     private long Id;
     private String name;
     private String surname;
 
-    public User(){
-    }
-
-    public User(long Id, String name, String surname){
+    //@JsonProperty used to let spring know that it can convert it to a java class
+    public User(@JsonProperty("Id") long Id, @JsonProperty("name") String name, @JsonProperty("surname") String surname){
         this.Id = Id;
         this.name = name;
         this.surname = surname;
