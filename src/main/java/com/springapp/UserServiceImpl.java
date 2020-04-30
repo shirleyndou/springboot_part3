@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserService {
         fakeRepo.insertUser(1, "shirley", "ndou");
         fakeRepo.insertUser(2, "John", "Doe");
         fakeRepo.insertUser(3, "Mary", "Jane");
-        System.out.println(name + "entered");
+        System.out.println(name + " entered");
 
         return name;
     }

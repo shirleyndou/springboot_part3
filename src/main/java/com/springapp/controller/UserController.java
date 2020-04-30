@@ -1,4 +1,4 @@
-package com.springapp;
+package com.springapp.controller;
 
 import com.springapp.User;
 import com.springapp.UserService;
