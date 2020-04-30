@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
-   private final FakeRepoInterface fakeRepo;
+    FakeRepoInterface fakeRepo;
     @Autowired
-    public UserServiceImpl(@Qualifier("fake") FakeRepoInterface fakeRepo){
+    public UserServiceImpl(FakeRepoInterface fakeRepo){
         this.fakeRepo = fakeRepo;
     }
 
@@ -19,7 +19,6 @@ public class UserServiceImpl implements UserService {
         fakeRepo.insertUser(2, "John", "Doe");
         fakeRepo.insertUser(3, "Mary", "Jane");
         System.out.println(name + " entered");
-
         return name;
     }
 

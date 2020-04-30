@@ -1,7 +1,5 @@
-package com.springapp.controller;
+package com.springapp;
 
-import com.springapp.User;
-import com.springapp.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -8,7 +8,9 @@ public class User {
     private String name;
     private String surname;
 
-    //@JsonProperty used to let spring know that it can convert it to a java class
+    public User(){
+    }
+
     public User(@JsonProperty("Id") long Id, @JsonProperty("name") String name, @JsonProperty("surname") String surname){
         this.Id = Id;
         this.name = name;
